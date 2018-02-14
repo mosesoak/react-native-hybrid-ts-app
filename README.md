@@ -29,15 +29,16 @@ Jest - issues!
 
 - needs [special mocks](https://facebook.github.io/jest/docs/en/webpack.html) to handle inline svg
 - `yarn add canvas-prebuilt` to avoid error during test
-- still erroring out on Animated code :-(
+- was erroring out on Animated code, had to workaround by setting style in state
 
 
 ## native
 
 `yarn add -D react-native-typescript-transformer typescript tslint ts-jest @types/react-native @types/react @types/jest fs-extra`
 
-- move `__tests__` into `src`
+Jest: issues here too!
 
+- Difficult to get images to work, resolved using the assetsTransformer solution from [this thread](https://github.com/facebook/jest/issues/2663)
 
 tsconfig.json
 ```json

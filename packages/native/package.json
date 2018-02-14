@@ -36,11 +36,6 @@
     "typescript": "^2.7.1"
   },
   "jest": {
-    "globals": {
-      "ts-jest": {
-        "tsConfigFile": "tsconfig-jest.json"
-      }
-    },
     "modulePaths": [
       "<rootDir>"
     ],
