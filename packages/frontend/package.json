@@ -2,6 +2,12 @@
   "name": "react-native-web-app",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom",
+    "lint": "tslint -c ../../tslint.json -p ./tsconfig.json --exclude \"**/__tests__/**\" || true"
+  },
   "dependencies": {
     "@types/react": "^16.0.36",
     "@types/react-native": "^0.52.7",
@@ -50,16 +56,20 @@
     "webpack-manifest-plugin": "1.3.2",
     "whatwg-fetch": "2.0.3"
   },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+  "devDependencies": {
+    "@types/jest": "^22.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-native": "^4.0.0",
+    "jest": "^22.3.0",
+    "react-test-renderer": "^16.2.0",
+    "ts-jest": "^22.0.4"
   },
   "jest": {
     "modulePaths": [
       "<rootDir>"
     ],
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testRegex": "(/__tests__/.*)\\.(jsx?|tsx?)$",
     "transform": {
       "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
       "^.+\\.tsx?$": "ts-jest"
@@ -85,14 +95,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "devDependencies": {
-    "@types/jest": "^22.1.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-react-native": "^4.0.0",
-    "jest": "^22.3.0",
-    "react-test-renderer": "^16.2.0",
-    "ts-jest": "^22.0.4"
   }
 }

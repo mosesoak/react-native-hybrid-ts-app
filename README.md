@@ -12,90 +12,44 @@ React Native for Web:
 
 https://github.com/necolas/react-native-web
 
-react-native-typescript-transformer
+react-native-typescript-transformer:
+
 https://github.com/ds300/react-native-typescript-transformer
+
+#### Dependencies:
 
 `yarn add react-native-web`
 
-`yarn add -D awesome-typescript-loader babel-plugin-react-native-web babel-jest babel-preset-env babel-preset-react babel-preset-react-native react-test-renderer ts-jest babel-jest @types/jest @types/react-native @types/react`
+`yarn add -D awesome-typescript-loader babel-plugin-react-native-web babel-jest babel-preset-env babel-preset-react babel-preset-react-native react-test-renderer ts-jest babel-jest canvas-prebuilt @types/jest @types/react-native @types/react`
 
-Load typescript in webpack.config.dev.js
-```js
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader'
-      },
-```
+#### Configs:
 
-Jest - issues!
+- rn-ts-transfomer packager config: [rn-cli.config.js](packages/frontend/rn-cli.config.js)
+- Load typescript in [webpack.config.dev.js](packages/frontend/webpack.config.dev.js) in `module > rules`
+- [tsconfig.json](packages/frontend/tsconfig.json)
+- custom jest config in [package.json](packages/frontend/package.json)
 
+#### Jest - issues!
+
+- needed to remove the match `|(\\.|/)(test|spec)` because it was matching the file scripts/test.js (provided by the ejected CRA)
 - needs [special mocks](https://facebook.github.io/jest/docs/en/webpack.html) to handle inline svg
-- `yarn add canvas-prebuilt` to avoid error during test
-- was erroring out on Animated code, had to workaround by setting style in state
-
+- had to add dependency `canvas-prebuilt` to avoid error during test
+- was erroring out on Animated code, had to work around by setting style in state
 
 ## native
 
+#### Dependencies:
+
 `yarn add -D react-native-typescript-transformer typescript tslint ts-jest @types/react-native @types/react @types/jest fs-extra`
 
-Jest: issues here too!
+#### Configs:
+
+- [Extra package.json declaring "src"](packages/native/src/package.json) at top of `src` directory - don't skip this step, it's necessary!
+- [tsconfig.json](packages/native/tsconfig.json)
+- [rn-cli.config.js](packages/native/rn-cli.config.js)
+- custom jest config in [package.json](packages/native/package.json)
+
+
+#### Jest: issues here too!
 
 - Difficult to get images to work, resolved using the assetsTransformer solution from [this thread](https://github.com/facebook/jest/issues/2663)
-
-tsconfig.json
-```json
-{
-  "compilerOptions": {
-    "target": "es6",
-    "module": "es6",
-    "jsx": "react",
-    "allowJs": true,
-    "noEmit": true,
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    "types": [
-      "react",
-      "react-dom",
-      "react-native",
-      "jest"
-    ],
-    "lib": [
-      "es6"
-    ],
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "strictNullChecks": true,
-    "noImplicitAny": true
-  },
-  "exclude": [
-    "node_modules",
-    "src/state/_web/**/*.*"
-  ]
-}
-```
-
-tsconfig.jest
-```json
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "jsx": null
-  },
-  "exclude": ["node_modules"]
-}
-```
-
-rn-cli.config.js
-```js
-module.exports = {
-  getTransformModulePath() {
-    return require.resolve('react-native-typescript-transformer');
-  },
-  getSourceExts() {
-    return ['ts', 'tsx'];
-  },
-};
-```
-
