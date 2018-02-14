@@ -1,6 +1,10 @@
 # React Native Hybrid Typescript App
 
-Let's build a hybrid app!
+Let's build a hybrid app using Typescript!
+
+This experiment sets up separate frontend & native packages, with some simple copy scripts to move code back and forth for now.
+
+The idea is that by isolating the projects, top-level configurations can live separately.
 
 ## frontend (Web)
 
