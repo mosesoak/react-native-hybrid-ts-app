@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "sourceMap": true,
-    "jsx": "react-native",
+    "jsx": "react",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
   },

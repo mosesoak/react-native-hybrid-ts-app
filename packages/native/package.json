@@ -1,22 +1,66 @@
 {
-  "name": "HybridApp",
+  "name": "hybrid-app-native",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "start": "node node_modules/react-native/local-cli/cli.js start --transformer node_modules/react-native-typescript-transformer/index.js --sourceExts ts,tsx",
+    "cleanstart": "watchman watch-del-all && yarn cache clean && node node_modules/react-native/local-cli/cli.js start -- --reset-cache --transformer node_modules/react-native-typescript-transformer/index.js --sourceExts ts,tsx",
+    "reinstall": "rm -rf ./node_modules && watchman watch-del-all && yarn cache clean && rm -rf $TMPDIR/react-* && yarn",
+    "link": "node node_modules/react-native/local-cli/cli.js link",
+    "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "xcode": "open ios/*.xcodeproj",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "android-logs": "adb logcat *:S ReactNative:V ReactNativeJS:V",
+    "bundle": "node node_modules/react-native/local-cli/cli.js bundle --entry-file=index.js --bundle-output=ios/main.jsbundle --dev false",
+    "test": "jest",
+    "lint": "tslint -c ../../tslint.json -p ./tsconfig.json --exclude \"**/__tests__/**\" || true",
+    "copy-from-web": "node ./scripts/copy-from-web.js",
+    "copy-from-native": "node ./scripts/copy-from-native.js"
   },
   "dependencies": {
     "react": "16.2.0",
     "react-native": "0.53.0"
   },
   "devDependencies": {
+    "@types/jest": "^22.1.2",
+    "@types/react": "^16.0.38",
+    "@types/react-native": "^0.52.10",
     "babel-jest": "22.2.2",
     "babel-preset-react-native": "4.0.0",
+    "fs-extra": "^5.0.0",
     "jest": "22.3.0",
-    "react-test-renderer": "16.2.0"
+    "react-native-typescript-transformer": "^1.2.3",
+    "react-test-renderer": "16.2.0",
+    "ts-jest": "^22.0.4",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1"
   },
   "jest": {
-    "preset": "react-native"
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "tsconfig-jest.json"
+      }
+    },
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/scripts/assetsTransformer.js",
+      "\\.(css|less)$": "<rootDir>/scripts/assetsTransformer.js"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }

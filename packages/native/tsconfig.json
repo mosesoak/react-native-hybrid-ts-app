@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "jsx": "react",
+    "allowJs": true,
+    "noEmit": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "types": [
+      "react",
+      "react-dom",
+      "react-native",
+      "jest"
+    ],
+    "lib": [
+      "es6"
+    ],
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true
+  },
+  "exclude": [
+    "node_modules",
+    "src/state/_web/**/*.*"
+  ]
+}

@@ -51,3 +51,9 @@ buck-out/
 */fastlane/report.xml
 */fastlane/Preview.html
 */fastlane/screenshots
+
+# -- custom ignores below -- #
+*.zip
+ios/main.jsbundle*
+fastlane/ipa
+fastlane/.env
