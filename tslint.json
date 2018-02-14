@@ -1,6 +1,4 @@
 {
-  "compilerOptions": {
-  },
   "rules": {
     "array-type": false,
     "arrow-parens": true,
@@ -56,7 +54,6 @@
     "no-unsafe-finally": true,
     "no-unused-expression": false,
     // "no-unused-variable": true, // see vscode tslint plugin page for info on why this doesn't currently work
-    "no-use-before-declare": true,
     "no-var-keyword": true,
     "no-void-expression": false,
     "object-literal-key-quotes": false,

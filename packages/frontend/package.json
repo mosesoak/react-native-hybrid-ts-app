@@ -9,6 +9,7 @@
     "lint": "tslint -c ../../tslint.json -p ./tsconfig.json --exclude \"**/__tests__/**\" || true"
   },
   "dependencies": {
+    "@types/jest": "^22.1.2",
     "@types/react": "^16.0.36",
     "@types/react-native": "^0.52.7",
     "autoprefixer": "7.1.6",
@@ -19,7 +20,10 @@
     "babel-loader": "7.1.2",
     "babel-plugin-react-native-web": "^0.3.3",
     "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^3.1.1",
+    "babel-preset-react-native": "^4.0.0",
     "babel-runtime": "6.26.0",
     "canvas-prebuilt": "^1.6.5-prerelease.1",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
@@ -38,6 +42,7 @@
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
     "html-webpack-plugin": "2.29.0",
+    "jest": "^22.3.0",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -47,8 +52,11 @@
     "react-dev-utils": "^5.0.0",
     "react-dom": "^16.2.0",
     "react-native-web": "^0.3.4",
+    "react-test-renderer": "^16.2.0",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
+    "ts-jest": "^22.0.4",
+    "tslint": "^5.9.1",
     "typescript": "^2.7.1",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
@@ -56,15 +64,7 @@
     "webpack-manifest-plugin": "1.3.2",
     "whatwg-fetch": "2.0.3"
   },
-  "devDependencies": {
-    "@types/jest": "^22.1.2",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-react-native": "^4.0.0",
-    "jest": "^22.3.0",
-    "react-test-renderer": "^16.2.0",
-    "ts-jest": "^22.0.4"
-  },
+  "devDependencies": {},
   "jest": {
     "modulePaths": [
       "<rootDir>"

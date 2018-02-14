@@ -20,7 +20,7 @@ https://github.com/ds300/react-native-typescript-transformer
 
 `yarn add react-native-web`
 
-`yarn add -D awesome-typescript-loader babel-plugin-react-native-web babel-jest babel-preset-env babel-preset-react babel-preset-react-native react-test-renderer ts-jest babel-jest canvas-prebuilt @types/jest @types/react-native @types/react`
+`yarn add -D typescript tslint awesome-typescript-loader babel-plugin-react-native-web babel-jest babel-preset-env babel-preset-react babel-preset-react-native react-test-renderer ts-jest babel-jest canvas-prebuilt @types/jest @types/react-native @types/react`
 
 #### Configs:
 
