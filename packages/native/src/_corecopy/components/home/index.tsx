@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
-import Logo from '../logo';
-import Split from '../split';
+import { TouchableOpacity, StatusBar, Platform } from 'react-native';
+
 import { IAppState } from '../../state/stateTypes';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
+
 import { incrementCounter } from '../../state/actions/counter';
-import { Div, Span } from 'glamorous';
+import Logo from '../logo';
+import Split from '../split';
+
+// Note the special import here!
+import { View, Text } from '../glam-hybrid/index';
 
 export interface IHomeProps {}
 
@@ -19,44 +24,11 @@ interface IReduxProps {
 
 export interface IHomeState {}
 
-const styles = () => ({
-  container: {
-    flexGrow: 1,
-    alignContent: 'center',
-  },
-  header: {
-    backgroundColor: '#222',
-    padding: 20,
-    alignContent: 'center',
-  },
-  title: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 24,
-    marginVertical: 2,
-    textAlign: 'center',
-  },
-  intro: {
-    fontSize: 18,
-    marginVertical: 5,
-    textAlign: 'center',
-  },
-  code: {
-    fontFamily: 'monospace, monospace',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
 type Props = IHomeProps & IInjectedProps & IReduxProps;
+
+if (Platform.OS !== 'web') {
+  StatusBar.setBarStyle('light-content');
+}
 
 export class HomePure extends Component<Props, IHomeState> {
   constructor(props: Props, context?: any) {
@@ -70,8 +42,8 @@ export class HomePure extends Component<Props, IHomeState> {
 
   render() {
     return (
-      <Div>
-        <Div
+      <View>
+        <View
           backgroundColor="#222"
           padding={20}
           display="flex"
@@ -80,31 +52,30 @@ export class HomePure extends Component<Props, IHomeState> {
           flexDirection="column"
         >
           <Logo />
-          <Span
+          <Text
             color="white"
             fontSize={18}
             marginVertical={2}
             textAlign="center"
-            fontFamily="sans-serif"
           >
             Welcome to Our Hybrid App!
-          </Span>
-        </Div>
+          </Text>
+        </View>
 
         <Split foo="blah" bar={1} />
 
-        <Div
+        <View
           display="flex"
           alignItems="center"
           justifyContent="center"
           flexDirection="column"
         >
-          <Span padding={20}>{`Count: ${this.props.count}`}</Span>
-          <button onClick={this.handleCounterClick}>
-            <span>Increment</span>
-          </button>
-        </Div>
-      </Div>
+          <Text padding={20}>{`Count: ${this.props.count}`}</Text>
+          <TouchableOpacity onPress={this.handleCounterClick}>
+            <Text>Increment</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     );
   }
 }
