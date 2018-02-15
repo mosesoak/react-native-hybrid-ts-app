@@ -2,7 +2,7 @@ const fs = require('fs-extra');
 
 const sourceDir = '../frontend/src';
 const destDir = 'src/_corecopy';
-const sources = ['components', 'util', 'images'];
+const sources = ['components', 'state', 'util', 'images'];
 
 const all = sources.map(
   (source) =>

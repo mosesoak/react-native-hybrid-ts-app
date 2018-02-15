@@ -23,7 +23,7 @@ https://github.com/ds300/react-native-typescript-transformer
 
 #### Dependencies:
 
-`yarn add react-native-web typescript tslint awesome-typescript-loader babel-plugin-react-native-web babel-jest babel-preset-env babel-preset-react babel-preset-react-native react-test-renderer ts-jest babel-jest canvas-prebuilt prettier @types/node @types/jest @types/react-native @types/react`
+`yarn add react-native-web typescript tslint awesome-typescript-loader babel-plugin-react-native-web babel-jest babel-preset-env babel-preset-react babel-preset-react-native react-test-renderer ts-node ts-jest babel-jest canvas-prebuilt react-router redux react-redux react-router-redux redux-devtools-extension redux-thunk prettier @types/node @types/jest @types/react-native @types/react @types/redux @types/react-redux @types/redux-thunk @types/react-router-redux`
 
 #### Configs:
 
@@ -43,7 +43,7 @@ https://github.com/ds300/react-native-typescript-transformer
 
 #### Dependencies:
 
-`yarn add -D react-native-typescript-transformer typescript tslint ts-jest prettier @types/node @types/react-native @types/react @types/jest fs-extra`
+`yarn add redux react-redux redux-thunk && yarn add -D react-native-typescript-transformer typescript tslint ts-node ts-jest fs-extra redux-devtools-extension prettier @types/node @types/react-native @types/react @types/jest @types/redux @types/react-redux @types/redux-thunk`
 
 #### Configs:
 

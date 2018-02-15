@@ -1,20 +1,24 @@
-import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
-import Split from '../split';
-import { Home } from '../home';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { Provider } from 'react-redux';
+import createReduxStore from '../../state/createReduxStore';
+import Home from '../home/index';
 
-export default class App extends Component {
+const reduxStore = createReduxStore();
+
+class App extends React.Component {
   render() {
     return (
-      <View style={styles.app}>
+      <Provider store={reduxStore}>
         <Home />
-      </View>
+      </Provider>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  app: {
-    flexGrow: 1,
-  },
+  box: { padding: 10 },
+  text: { fontWeight: 'bold' },
 });
+
+export default App;
