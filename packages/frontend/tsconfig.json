@@ -3,16 +3,19 @@
     "target": "es6",
     "sourceMap": true,
     "jsx": "react",
+    "allowJs": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+
+    // "skipLibCheck" until resolved: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/16825
+    "skipLibCheck": true,
+
+    "lib": ["dom", "es2015", "es2016"]
   },
   "awesomeTypescriptLoaderOptions": {
     "useBabel": true
   },
-  "files": [
-    "src/index.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "files": ["src/index.ts"],
+  "exclude": ["node_modules"]
 }

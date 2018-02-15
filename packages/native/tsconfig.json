@@ -23,6 +23,6 @@
   },
   "exclude": [
     "node_modules",
-    "src/state/_web/**/*.*"
+    "src/**/_web/**/*.*"
   ]
 }

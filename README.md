@@ -6,6 +6,11 @@ This experiment sets up separate frontend & native packages, with some simple co
 
 The idea is that by isolating the projects, top-level configurations can live separately.
 
+## Key branches in this repo
+
+`basic-no-css-or-redux`
+`redux`
+
 ## frontend (Web)
 
 React Native for Web:
@@ -18,13 +23,13 @@ https://github.com/ds300/react-native-typescript-transformer
 
 #### Dependencies:
 
-`yarn add react-native-web typescript tslint awesome-typescript-loader babel-plugin-react-native-web babel-jest babel-preset-env babel-preset-react babel-preset-react-native react-test-renderer ts-jest babel-jest canvas-prebuilt @types/jest @types/react-native @types/react`
+`yarn add react-native-web typescript tslint awesome-typescript-loader babel-plugin-react-native-web babel-jest babel-preset-env babel-preset-react babel-preset-react-native react-test-renderer ts-jest babel-jest canvas-prebuilt prettier @types/node @types/jest @types/react-native @types/react`
 
 #### Configs:
 
 - rn-ts-transfomer packager config: [rn-cli.config.js](packages/frontend/rn-cli.config.js)
 - Load typescript in [webpack.config.dev.js](packages/frontend/webpack.config.dev.js) in `module > rules`
-- [tsconfig.json](packages/frontend/tsconfig.json)
+- [tsconfig.json](packages/frontend/tsconfig.json) - note "skipLibCheck" fix
 - custom jest config in [package.json](packages/frontend/package.json)
 
 #### Jest - issues!
@@ -38,7 +43,7 @@ https://github.com/ds300/react-native-typescript-transformer
 
 #### Dependencies:
 
-`yarn add -D react-native-typescript-transformer typescript tslint ts-jest @types/react-native @types/react @types/jest fs-extra`
+`yarn add -D react-native-typescript-transformer typescript tslint ts-jest prettier @types/node @types/react-native @types/react @types/jest fs-extra`
 
 #### Configs:
 

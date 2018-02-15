@@ -1,0 +1,4 @@
+# .prettierrc
+singleQuote: true
+trailingComma: all
+arrowParens: always
