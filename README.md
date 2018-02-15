@@ -32,17 +32,17 @@ https://github.com/ds300/react-native-typescript-transformer
 
 #### Configs:
 
-- rn-ts-transfomer packager config: [rn-cli.config.js](packages/frontend/rn-cli.config.js)
-- Load typescript in [webpack.config.dev.js](packages/frontend/webpack.config.dev.js) in `module > rules`
-- [tsconfig.json](packages/frontend/tsconfig.json) - note "skipLibCheck" fix
-- custom jest config in [package.json](packages/frontend/package.json)
+* rn-ts-transfomer packager config: [rn-cli.config.js](packages/frontend/rn-cli.config.js)
+* Load typescript in [webpack.config.dev.js](packages/frontend/webpack.config.dev.js) in `module > rules`
+* [tsconfig.json](packages/frontend/tsconfig.json) - note "skipLibCheck" fix
+* custom jest config in [package.json](packages/frontend/package.json)
 
 #### Jest - issues!
 
-- needed to remove the match `|(\\.|/)(test|spec)` because it was matching the file scripts/test.js (provided by the ejected CRA)
-- needs [special mocks](https://facebook.github.io/jest/docs/en/webpack.html) to handle inline svg
-- had to add dependency `canvas-prebuilt` to avoid error during test
-- was erroring out on Animated code, had to work around by setting style in state
+* needed to remove the match `|(\\.|/)(test|spec)` because it was matching the file scripts/test.js (provided by the ejected CRA)
+* needs [special mocks](https://facebook.github.io/jest/docs/en/webpack.html) to handle inline svg
+* had to add dependency `canvas-prebuilt` to avoid error during test
+* was erroring out on Animated code, had to work around by setting style in state
 
 ## native
 
@@ -54,12 +54,11 @@ https://github.com/ds300/react-native-typescript-transformer
 
 #### Configs:
 
-- [Extra package.json declaring "src"](packages/native/src/package.json) at top of `src` directory - don't skip this step, it's necessary!
-- [tsconfig.json](packages/native/tsconfig.json)
-- [rn-cli.config.js](packages/native/rn-cli.config.js)
-- custom jest config in [package.json](packages/native/package.json)
-
+* [Extra package.json declaring "src"](packages/native/src/package.json) at top of `src` directory - don't skip this step, it's necessary!
+* [tsconfig.json](packages/native/tsconfig.json)
+* [rn-cli.config.js](packages/native/rn-cli.config.js)
+* custom jest config in [package.json](packages/native/package.json)
 
 #### Jest: issues here too!
 
-- Difficult to get images to work, resolved using the assetsTransformer solution from [this thread](https://github.com/facebook/jest/issues/2663)
+* Difficult to get images to work, resolved using the assetsTransformer solution from [this thread](https://github.com/facebook/jest/issues/2663)

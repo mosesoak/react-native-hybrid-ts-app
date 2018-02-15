@@ -1,3 +1,16 @@
 {
-    "editor.tabSize": 2
-}
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "files.insertFinalNewline": true,
+    "files.associations": {
+      "Fastfile": "ruby",
+      "Appfile": "ruby",
+      "Matchfile": "ruby",
+      "Gymfile": "ruby"
+    },
+    "editor.tabSize": 2,
+    "eslint.enable": false,
+    "tslint.enable": true
+  }
+  
