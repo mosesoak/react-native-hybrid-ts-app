@@ -8,8 +8,11 @@ The idea is that by isolating the projects, top-level configurations can live se
 
 ## Key branches in this repo
 
-`basic-no-css-or-redux`
-`redux`
+`a-starter`
+
+`b-redux`
+
+`c-glamorous`
 
 ## frontend (Web)
 
@@ -47,7 +50,7 @@ https://github.com/ds300/react-native-typescript-transformer
 
 (on top of react-native init)
 
-`yarn add redux react-redux redux-thunk && yarn add -D react-native-typescript-transformer typescript tslint ts-node ts-jest fs-extra redux-devtools-extension prettier prop-types glamor glamorous @types/node @types/react-native @types/react @types/jest @types/redux @types/react-redux @types/redux-thunk`
+`yarn add redux react-redux redux-thunk && yarn add -D react-native-typescript-transformer typescript tslint ts-node ts-jest fs-extra redux-devtools-extension prettier prop-types glamorous-native @types/node @types/react-native @types/react @types/jest @types/redux @types/react-redux @types/redux-thunk`
 
 #### Configs:
 
