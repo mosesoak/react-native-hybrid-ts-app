@@ -28,6 +28,8 @@ https://github.com/ds300/react-native-typescript-transformer
 
 (on top of an ejected Create-React-App)
 
+`yarn remove babel-eslint eslint eslint-config-react-app eslint-loader eslint-plugin-flowtype eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react`
+
 `yarn add react-native-web typescript tslint awesome-typescript-loader babel-plugin-react-native-web babel-jest babel-preset-env babel-preset-react babel-preset-react-native react-test-renderer ts-jest babel-jest canvas-prebuilt prettier @types/node @types/jest @types/react-native @types/react`
 
 #### Configs:
