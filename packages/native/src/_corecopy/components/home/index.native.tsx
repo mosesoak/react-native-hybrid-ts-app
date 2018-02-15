@@ -13,7 +13,7 @@ import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { incrementCounter } from '../../state/actions/counter';
 
-export interface IHomeProps {}
+interface IHomeProps {}
 
 interface IInjectedProps {
   count: number;
@@ -23,11 +23,11 @@ interface IReduxProps {
   dispatch: Dispatch<IAppState>;
 }
 
-export interface IHomeState {}
+interface IHomeState {}
 
 StatusBar.setBarStyle('light-content');
 
-export class HomePure extends Component<
+class HomePure extends Component<
   IHomeProps & IInjectedProps & IReduxProps,
   IHomeState
 > {
