@@ -3,9 +3,9 @@ import { StyleSheet, Text, View, Platform, StatusBar } from 'react-native';
 import Logo from '../logo';
 import Split from '../split';
 
-interface IHomeProps { }
+interface IHomeProps {}
 
-interface IHomeState { }
+interface IHomeState {}
 
 if (Platform.OS !== 'web') {
   StatusBar.setBarStyle('light-content');
@@ -15,14 +15,12 @@ export class Home extends Component<IHomeProps, IHomeState> {
   render() {
     return (
       <View style={styles.container}>
-
         <View style={styles.header}>
           <Logo />
           <Text style={styles.title}>Welcome to Our Hybrid App!</Text>
         </View>
 
-        <Split foo='blah' bar={1} />
-
+        <Split foo="blah" bar={1} />
       </View>
     );
   }
@@ -34,21 +32,21 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: '#222',
-    padding: 20
+    padding: 20,
   },
   title: {
     color: 'white',
     fontWeight: 'bold',
     fontSize: 24,
     marginVertical: 2,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   intro: {
     fontSize: 18,
     marginVertical: 5,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   code: {
-    fontFamily: 'monospace, monospace'
-  }
+    fontFamily: 'monospace, monospace',
+  },
 });

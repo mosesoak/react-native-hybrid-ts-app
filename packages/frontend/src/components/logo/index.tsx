@@ -7,7 +7,6 @@ interface ILogoState {
 }
 
 export default class Logo extends Component<any, ILogoState> {
-
   spinValue = new Animated.Value(0);
 
   spinAmount = this.spinValue.interpolate({
@@ -23,34 +22,27 @@ export default class Logo extends Component<any, ILogoState> {
   // Jest workaround...
   state = {
     logoTransformStyle: null,
-  }
+  };
 
   componentDidMount() {
-
     // Jest workaround...
     this.setState({
       logoTransformStyle: {
-        transform: [
-          { scale: this.scalePulse },
-          { rotate: this.spinAmount },
-        ]
-      }
-    })
+        transform: [{ scale: this.scalePulse }, { rotate: this.spinAmount }],
+      },
+    });
 
-    this.spin()
+    this.spin();
   }
 
   spin() {
-    this.spinValue.setValue(0)
-    Animated.timing(
-      this.spinValue,
-      {
-        toValue: 1,
-        duration: 1500,
-        delay: 1000,
-        easing: Easing.inOut(Easing.back(3)),
-      }
-    ).start(() => this.spin())
+    this.spinValue.setValue(0);
+    Animated.timing(this.spinValue, {
+      toValue: 1,
+      duration: 1500,
+      delay: 1000,
+      easing: Easing.inOut(Easing.back(3)),
+    }).start(() => this.spin());
   }
 
   render() {
@@ -59,10 +51,7 @@ export default class Logo extends Component<any, ILogoState> {
         accessibilityLabel="React logo"
         source={require('./images/react-logo.png')}
         resizeMode="contain"
-        style={[
-          this.state.logoTransformStyle,
-          styles.logo,
-        ]}
+        style={[this.state.logoTransformStyle, styles.logo]}
       />
     );
   }
