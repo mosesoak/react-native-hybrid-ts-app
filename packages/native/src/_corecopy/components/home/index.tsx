@@ -6,7 +6,7 @@ import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { incrementCounter } from '../../state/actions/counter';
 
-interface IHomeProps {}
+export interface IHomeProps {}
 
 interface IInjectedProps {
   count: number;
@@ -16,9 +16,9 @@ interface IReduxProps {
   dispatch: Dispatch<IAppState>;
 }
 
-interface IHomeState {}
+export interface IHomeState {}
 
-class HomePure extends Component<
+export class HomePure extends Component<
   IHomeProps & IInjectedProps & IReduxProps,
   IHomeState
 > {
