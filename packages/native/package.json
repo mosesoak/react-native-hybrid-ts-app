@@ -37,7 +37,7 @@
     "jest": "22.3.0",
     "prettier": "^1.10.2",
     "react-native-typescript-transformer": "^1.2.3",
-    "react-test-renderer": "16.2.0",
+    "react-test-renderer": "^16.2.0",
     "redux-devtools-extension": "^2.13.2",
     "ts-jest": "^22.0.4",
     "ts-node": "^4.1.0",
