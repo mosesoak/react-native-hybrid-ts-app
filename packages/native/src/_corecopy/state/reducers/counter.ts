@@ -9,7 +9,10 @@ const initialState: ICounterState = {
   count: 0,
 };
 
-export const counter = (state: ICounterState = initialState, action: AnyAction) => {
+export const counter = (
+  state: ICounterState = initialState,
+  action: AnyAction,
+) => {
   switch (action.type) {
     case INCREMENT_COUNTER:
       return {

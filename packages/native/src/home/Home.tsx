@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Split from 'src/_corecopy/components/split';
 
-interface IHomeProps { }
+interface IHomeProps {}
 
-interface IHomeState { }
+interface IHomeState {}
 
 export class Home extends Component<IHomeProps, IHomeState> {
   render() {

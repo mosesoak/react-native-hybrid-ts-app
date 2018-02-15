@@ -10,9 +10,7 @@ const reducers = combineReducers({
 }) as Reducer<IAppState>;
 
 export default function createReduxStore() {
-  let middlewares = applyMiddleware(
-    thunk,
-  );
+  let middlewares = applyMiddleware(thunk);
 
   if (isDev()) {
     middlewares = composeWithDevTools(middlewares);
