@@ -3,23 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start":
-      "node node_modules/react-native/local-cli/cli.js start --transformer node_modules/react-native-typescript-transformer/index.js --sourceExts ts,tsx",
-    "cleanstart":
-      "watchman watch-del-all && yarn cache clean && node node_modules/react-native/local-cli/cli.js start -- --reset-cache --transformer node_modules/react-native-typescript-transformer/index.js --sourceExts ts,tsx",
-    "reinstall":
-      "rm -rf ./node_modules && watchman watch-del-all && yarn cache clean && rm -rf $TMPDIR/react-* && yarn",
+    "start": "node node_modules/react-native/local-cli/cli.js start --transformer node_modules/react-native-typescript-transformer/index.js --sourceExts ts,tsx",
+    "cleanstart": "watchman watch-del-all && yarn cache clean && node node_modules/react-native/local-cli/cli.js start -- --reset-cache --transformer node_modules/react-native-typescript-transformer/index.js --sourceExts ts,tsx",
+    "reinstall": "rm -rf ./node_modules && watchman watch-del-all && yarn cache clean && rm -rf $TMPDIR/react-* && yarn",
     "link": "node node_modules/react-native/local-cli/cli.js link",
-    "ios":
-      "node node_modules/react-native/local-cli/cli.js run-ios --simulator=\"iPhone 8\"",
+    "ios": "node node_modules/react-native/local-cli/cli.js run-ios --simulator=\"iPhone 8\"",
     "xcode": "open ios/*.xcodeproj",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
     "android-logs": "adb logcat *:S ReactNative:V ReactNativeJS:V",
-    "bundle":
-      "node node_modules/react-native/local-cli/cli.js bundle --entry-file=index.js --bundle-output=ios/main.jsbundle --dev false",
+    "bundle": "node node_modules/react-native/local-cli/cli.js bundle --entry-file=index.js --bundle-output=ios/main.jsbundle --dev false",
     "test": "jest",
-    "lint":
-      "tslint -c ../../tslint.json -p ./tsconfig.json --exclude \"**/__tests__/**\" || true",
+    "lint": "tslint -c ../../tslint.json -p ./tsconfig.json --exclude \"**/__tests__/**\" || true",
+    "merge-from-web": "node ./scripts/merge-from-web.js",
     "copy-from-web": "node ./scripts/copy-from-web.js",
     "copy-from-native": "node ./scripts/copy-from-native.js"
   },
@@ -43,6 +38,7 @@
     "babel-preset-react-native": "4.0.0",
     "fs-extra": "^5.0.0",
     "jest": "22.3.0",
+    "node-exec-promise": "^1.0.2",
     "prettier": "^1.10.2",
     "react-native-typescript-transformer": "^1.2.3",
     "react-test-renderer": "^16.2.0",
@@ -53,7 +49,9 @@
     "typescript": "^2.7.1"
   },
   "jest": {
-    "modulePaths": ["<rootDir>"],
+    "modulePaths": [
+      "<rootDir>"
+    ],
     "preset": "react-native",
     "transform": {
       "^.+\\.jsx?$": "<rootDir>/node_modules/babel-jest",
@@ -61,10 +59,16 @@
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/scripts/assetsTransformer.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/scripts/assetsTransformer.js",
       "\\.(css|less)$": "<rootDir>/scripts/assetsTransformer.js"
     },
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
